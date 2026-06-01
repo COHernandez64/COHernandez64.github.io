@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultorios Odontológicos Hernández · Cerro de las Rosas, Córdoba</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0d2444;
+  --blue:#1a4a8a;
+  --blue-mid:#2d6cc4;
+  --blue-light:#4a8fd4;
+  --blue-pale:#c8ddf5;
+  --blue-mist:#e8f1fb;
+  --blue-frost:#f0f6ff;
+  --sky:#6aabde;
+  --gold:#c9a84c;
+  --cream:#faf8f3;
+  --white:#ffffff;
+  --dark:#0d1a2e;
+  --mid:#3a5070;
+  --muted:#7a92ae;
+  --border:#cddaec;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;color:var(--dark);background:var(--white)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,36,68,0.97);backdrop-filter:blur(10px)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:66px;padding:0 2.5rem}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;letter-spacing:0.05em;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--blue-pale)}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s;font-weight:500}
+.nav-links a:hover{color:var(--blue-pale)}
+.nav-cta{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--blue-mid);color:var(--white);border:none;padding:0.55rem 1.5rem;cursor:pointer;transition:background 0.2s;font-weight:600}
+.nav-cta:hover{background:var(--blue-light)}
+
+.hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;padding-top:66px;background:var(--navy)}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 3rem 5rem 5rem}
+.hero-eyebrow{display:flex;align-items:center;gap:0.75rem;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue-pale);margin-bottom:2rem;font-weight:500}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-title{font-family:'DM Serif Display',serif;font-size:clamp(2.6rem,4vw,4rem);font-weight:400;line-height:1.1;margin-bottom:0.5rem;color:var(--white)}
+.hero-title-italic{font-family:'DM Serif Display',serif;font-size:clamp(2.6rem,4vw,4rem);font-style:italic;color:var(--sky);display:block;margin-bottom:1.8rem}
+.hero-desc{font-size:1rem;line-height:1.85;color:rgba(255,255,255,0.55);margin-bottom:3rem;font-weight:300;max-width:480px}
+.hero-btns{display:flex;gap:1.2rem;align-items:center}
+.btn-primary{background:var(--blue-mid);color:var(--white);padding:0.9rem 2.2rem;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-block;font-weight:600}
+.btn-primary:hover{background:var(--blue-light)}
+.btn-ghost{color:var(--blue-pale);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(200,221,245,0.3);padding:0.9rem 2rem;transition:all 0.2s;font-weight:500}
+.btn-ghost:hover{border-color:var(--blue-pale);color:var(--white)}
+.hero-right{background:linear-gradient(160deg,#1a3a6e 0%,#0d2444 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-right::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 60% 40%,rgba(45,108,196,0.25) 0%,transparent 70%)}
+.hero-visual{z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:3rem}
+.hero-emblem{width:200px;height:200px;border-radius:50%;border:1px solid rgba(200,221,245,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:2rem;position:relative}
+.hero-emblem::after{content:'';position:absolute;inset:8px;border-radius:50%;border:1px solid rgba(200,221,245,0.1)}
+.hero-emblem-inner{width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center}
+.hero-wordmark{font-family:'Playfair Display',serif;font-size:0.8rem;letter-spacing:0.2em;color:var(--blue-pale);text-transform:uppercase;margin-bottom:2.5rem;font-weight:400}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,221,245,0.1);border:1px solid rgba(200,221,245,0.1);width:100%;max-width:340px}
+.stat{background:rgba(255,255,255,0.02);padding:1.5rem 1rem;text-align:center}
+.stat-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--sky)}
+.stat-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:0.3rem;font-weight:500}
+
+.section-wrap{padding:5.5rem 2rem}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue-mid);margin-bottom:1.2rem;font-weight:600}
+.section-tag::before{content:'';display:block;width:20px;height:1px;background:var(--blue-mid)}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,3vw,2.8rem);line-height:1.15;margin-bottom:0.8rem;color:var(--navy)}
+.section-title em{font-style:italic;color:var(--blue-mid)}
+.section-sub{font-size:1rem;color:var(--muted);line-height:1.8;max-width:520px;font-weight:300}
+.divider-line{width:50px;height:2px;background:var(--blue-pale);margin:1.5rem 0}
+
+.services-bg{background:var(--blue-frost)}
+.services-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
+.services-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.service-card{background:var(--white);padding:2rem 1.5rem;border:1px solid var(--border);transition:all 0.25s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--blue-pale);transition:background 0.25s}
+.service-card:hover{border-color:var(--blue-light);transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,74,138,0.12)}
+.service-card:hover::before{background:var(--blue-mid)}
+.service-icon{width:44px;height:44px;background:var(--blue-mist);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.service-icon svg{width:20px;height:20px;stroke:var(--blue-mid);fill:none;stroke-width:1.5}
+.service-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:500;margin-bottom:0.6rem;color:var(--navy)}
+.service-desc{font-size:0.8rem;color:var(--muted);line-height:1.7;font-weight:300}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.about-visual{position:relative}
+.about-card-main{background:var(--navy);padding:3rem;color:var(--white);position:relative;overflow:hidden}
+.about-card-main::after{content:'';position:absolute;bottom:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(74,143,212,0.1)}
+.about-year-bg{font-family:'DM Serif Display',serif;font-size:7rem;font-weight:400;color:rgba(255,255,255,0.04);position:absolute;bottom:-10px;right:1rem;line-height:1}
+.about-card-tag{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sky);margin-bottom:1.5rem;font-weight:500}
+.about-card-text{font-family:'Playfair Display',serif;font-size:1.15rem;line-height:1.7;color:rgba(255,255,255,0.8);font-weight:400;font-style:italic}
+.about-card-accent{position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+.about-badge{position:absolute;bottom:-18px;right:2.5rem;background:var(--blue-mid);color:var(--white);padding:0.6rem 1.4rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600}
+.about-text{font-size:0.95rem;line-height:1.9;color:var(--mid);margin-bottom:1.2rem;font-weight:300}
+.about-team-title{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue-mid);margin-bottom:1rem;font-weight:600;margin-top:2rem}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.team-item{background:var(--blue-frost);padding:0.85rem 1.1rem;border-left:2px solid var(--blue-pale)}
+.team-role{font-size:0.67rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:0.2rem;font-weight:500}
+.team-name{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--navy)}
+
+.gallery-bg{background:var(--blue-mist)}
+.gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:12px;margin-top:3rem}
+.gallery-item{background:var(--white);display:flex;align-items:center;justify-content:center;border:1px solid var(--border);position:relative;overflow:hidden;transition:all 0.2s}
+.gallery-item:first-child{grid-row:span 2}
+.gallery-item:hover{border-color:var(--blue-light)}
+.g-label{position:absolute;bottom:0;left:0;right:0;background:rgba(13,36,68,0.75);padding:0.6rem 1rem;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.8);font-weight:500}
+.g-icon{opacity:0.12;color:var(--blue-mid)}
+.g-icon svg{width:36px;height:36px;stroke:currentColor;fill:none;stroke-width:1}
+
+.testimonials-bg{background:var(--white)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.test-card{padding:2.2rem;border:1px solid var(--border);position:relative;transition:border-color 0.2s}
+.test-card:hover{border-color:var(--blue-light)}
+.test-card::before{content:'';position:absolute;top:0;left:2rem;width:40px;height:2px;background:var(--blue-pale)}
+.test-quote{font-family:'DM Serif Display',serif;font-size:3.5rem;color:var(--blue-pale);line-height:0.7;display:block;margin-bottom:1rem}
+.test-text{font-size:0.9rem;line-height:1.85;color:var(--mid);font-weight:300;font-style:italic;margin-bottom:1.5rem}
+.test-footer{display:flex;align-items:center;gap:0.75rem}
+.test-avatar{width:36px;height:36px;border-radius:50%;background:var(--blue-mist);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:0.85rem;color:var(--blue-mid);font-weight:500;flex-shrink:0}
+.test-author{font-size:0.78rem;font-weight:600;color:var(--navy);letter-spacing:0.03em}
+.test-since{font-size:0.7rem;color:var(--muted)}
+.test-stars{color:var(--gold);font-size:0.75rem;letter-spacing:2px;margin-top:0.2rem}
+
+.contact-section{background:var(--navy)}
+.contact-section .section-tag{color:var(--sky)}
+.contact-section .section-tag::before{background:var(--sky)}
+.contact-section .section-title{color:var(--white)}
+.contact-section .section-title em{color:var(--sky)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;margin-top:3.5rem;align-items:start}
+.contact-details{display:flex;flex-direction:column;gap:2rem}
+.c-detail{display:flex;gap:1.2rem;align-items:flex-start}
+.c-icon{width:40px;height:40px;background:rgba(200,221,245,0.08);border:1px solid rgba(200,221,245,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.c-icon svg{width:16px;height:16px;stroke:var(--sky);fill:none;stroke-width:1.5}
+.c-label{font-size:0.67rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--sky);margin-bottom:0.35rem;font-weight:600}
+.c-val{font-size:0.92rem;color:rgba(255,255,255,0.7);line-height:1.6;font-weight:300}
+.c-val a{color:rgba(255,255,255,0.7);text-decoration:none}
+.c-val a:hover{color:var(--blue-pale)}
+.hours-table{margin-top:2.5rem;border-top:1px solid rgba(200,221,245,0.1);padding-top:2rem}
+.hours-title{font-size:0.67rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--sky);margin-bottom:1rem;font-weight:600}
+.hours-row{display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid rgba(200,221,245,0.06);font-size:0.85rem;color:rgba(255,255,255,0.55);font-weight:300}
+.hours-row span:last-child{color:rgba(255,255,255,0.75)}
+
+.contact-form-wrap{background:var(--white);padding:3rem}
+.form-title{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--navy);margin-bottom:2rem}
+.f-group{margin-bottom:1.1rem}
+.f-label{display:block;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.45rem;font-weight:600}
+.f-group input,.f-group select,.f-group textarea{width:100%;border:1px solid var(--border);padding:0.75rem 1rem;font-family:'Outfit',sans-serif;font-size:0.88rem;color:var(--dark);background:var(--blue-frost);outline:none;transition:border-color 0.2s;font-weight:300}
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus{border-color:var(--blue-mid);background:var(--white)}
+.f-group textarea{min-height:90px;resize:vertical}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.f-submit{width:100%;background:var(--navy);color:var(--white);border:none;padding:1rem;font-family:'Outfit',sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;font-weight:600;margin-top:0.5rem}
+.f-submit:hover{background:var(--blue-mid)}
+
+footer{background:#070f1e;color:rgba(255,255,255,0.35);padding:2.5rem 2rem;text-align:center}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:rgba(255,255,255,0.6);letter-spacing:0.08em;margin-bottom:0.4rem}
+.footer-sub{font-size:0.75rem;letter-spacing:0.08em;color:rgba(255,255,255,0.25);margin-bottom:1rem}
+.footer-links{display:flex;justify-content:center;gap:2rem;list-style:none}
+.footer-links a{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.25);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:rgba(255,255,255,0.6)}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-left{padding:3rem 1.5rem}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .test-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gallery-item:first-child{grid-row:span 1}
+  .nav-links{display:none}
+  .team-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#inicio">COH · <span>Odontología Integral</span></a>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Pedir turno</button>
+  </div>
+</nav>
+
+<section id="inicio" style="padding:0">
+<div class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Cerro de las Rosas · Córdoba</p>
+    <h1 class="hero-title">Odontología integral.</h1>
+    <span class="hero-title-italic">Trato humano. Siempre.</span>
+    <p class="hero-desc">Fundados en 1964 por el Dr. Antonio Hernández, somos un equipo familiar con más de seis décadas de historia. Nos especializamos en odontología integral para todas las edades, con el compromiso de siempre.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-primary">Reservar turno</a>
+      <a href="#nosotros" class="btn-ghost">Nuestra historia</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-emblem">
+        <div class="hero-emblem-inner">
+          <svg viewBox="0 0 60 70" width="55" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 5 C18 5 10 13 10 22 C10 28 12 32 14 38 C16 44 16 52 18 58 C19 62 21 64 24 64 C27 64 28 61 30 55 C32 61 33 64 36 64 C39 64 41 62 42 58 C44 52 44 44 46 38 C48 32 50 28 50 22 C50 13 42 5 30 5Z" stroke="rgba(200,221,245,0.5)" stroke-width="1.2" fill="none"/>
+            <circle cx="22" cy="22" r="5" stroke="rgba(106,171,222,0.6)" stroke-width="1" fill="none"/>
+          </svg>
+        </div>
+      </div>
+      <p class="hero-wordmark">Consultorios Odontológicos Hernández</p>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">60+</div><div class="stat-label">Años</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Generaciones</div></div>
+        <div class="stat"><div class="stat-num">5</div><div class="stat-label">Especialidades</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="servicios" class="section-wrap services-bg">
+<div class="section-inner">
+  <div class="services-header">
+    <div>
+      <p class="section-tag">Lo que hacemos</p>
+      <h2 class="section-title">Nuestros <em>servicios</em></h2>
+    </div>
+    <p class="section-sub">Atención integral para toda la familia, con profesionales especializados en cada área de la odontología.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 8c0 2 .8 3.5 1.5 5C8 15.5 8 18 9 20s2.5 3 3 3 2-1 3-3 1-4.5 2.5-7C18.5 11.5 19 10 19 8c0-3-3-6-7-6Z"/></svg></div>
+      <div class="service-name">Odontología General</div>
+      <div class="service-desc">Controles, limpiezas y cuidado preventivo para toda la familia.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="service-name">Cirugía</div>
+      <div class="service-desc">Extracciones y cirugías de terceros molares con máxima precisión.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
+      <div class="service-name">Rehabilitación</div>
+      <div class="service-desc">Coronas, puentes, implantes y prótesis para restaurar la función y estética.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg></div>
+      <div class="service-name">Ortodoncia</div>
+      <div class="service-desc">Brackets y alineadores para corregir la posición dental a cualquier edad.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+      <div class="service-name">Odontopediatría</div>
+      <div class="service-desc">Atención amigable y especializada para los más pequeños desde su primera visita.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="nosotros" class="section-wrap">
+<div class="section-inner">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-card-main">
+        <div class="about-card-accent"></div>
+        <p class="about-card-tag">Un equipo familiar · Desde Abril 1964</p>
+        <p class="about-card-text">"La historia de este consultorio es, antes que nada, una historia familiar. Comenzó con el Dr. Antonio Hernández en 1964 y hoy la continúan sus hijos, su nuera y su nieta — cada uno con su especialidad, todos con la misma vocación."</p>
+        <div class="about-year-bg">1964</div>
+      </div>
+      <div class="about-badge">Desde Abril 1964</div>
+    </div>
+    <div class="about-content" style="padding-top:1.5rem">
+      <p class="section-tag">Nuestra historia</p>
+      <h2 class="section-title">Tres generaciones,<br><em>una vocación</em></h2>
+      <div class="divider-line"></div>
+      <p class="about-text">En abril de 1964, el Dr. Antonio Hernández abrió las puertas de este consultorio en Cerro de las Rosas. Siempre se pregonó que cada paciente merece atención de calidad y trato humano. Hoy, la continúan sus hijos, su nuera y su nieta — cada uno con su especialidad, todos con la misma vocación.</p>
+      <p class="about-text">Somos un equipo de trabajo unido por la familia y por la convicción de que la odontología bien ejercida transforma vidas. Cada generación sumó nuevas especialidades y tecnologías, sin perder nunca la calidez del primer día.</p>
+      <p class="about-team-title">Nuestro equipo</p>
+      <div class="team-grid">
+        <div class="team-item"><span class="team-role">Fundador</span><span class="team-name">Dr. Antonio Hernández</span></div>
+        <div class="team-item"><span class="team-role">Odontólogo</span><span class="team-name">Dr. Gustavo A. Hernández</span></div>
+        <div class="team-item"><span class="team-role">Odontólogo</span><span class="team-name">Dr. César A. Hernández</span></div>
+        <div class="team-item"><span class="team-role">Odontóloga</span><span class="team-name">Dra. Mariana V. Venturini</span></div>
+        <div class="team-item" style="grid-column:span 2"><span class="team-role">Odontóloga</span><span class="team-name">Dra. Candelaria Hernández</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="galeria" class="section-wrap gallery-bg">
+<div class="section-inner">
+  <p class="section-tag">Nuestro espacio</p>
+  <h2 class="section-title">Galería del <em>consultorio</em></h2>
+  <p class="section-sub">Un ambiente pensado para que te sientas cómodo y en confianza desde el momento en que entrás.</p>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <div class="g-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+      <div class="g-label">Recepción principal</div>
+    </div>
+    <div class="gallery-item">
+      <div class="g-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+      <div class="g-label">Consultorio</div>
+    </div>
+    <div class="gallery-item">
+      <div class="g-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+      <div class="g-label">Sala de espera</div>
+    </div>
+    <div class="gallery-item">
+      <div class="g-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+      <div class="g-label">Sector pediátrico</div>
+    </div>
+    <div class="gallery-item">
+      <div class="g-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+      <div class="g-label">Equipamiento</div>
+    </div>
+  </div>
+  <p style="margin-top:1.2rem;font-size:0.82rem;color:var(--muted);font-style:italic">* Las fotos del consultorio se agregarán próximamente.</p>
+</div>
+</section>
+
+<section id="testimonios" class="section-wrap testimonials-bg">
+<div class="section-inner">
+  <p class="section-tag">Lo que dicen nuestros pacientes</p>
+  <h2 class="section-title">Testimonios de <em>confianza</em></h2>
+  <div class="test-grid">
+    <div class="test-card">
+      <span class="test-quote">"</span>
+      <p class="test-text">Llevo años yendo con toda la familia. Los chicos perdieron el miedo al dentista gracias a cómo los tratan. Un equipo excepcional.</p>
+      <div class="test-footer">
+        <div class="test-avatar">MG</div>
+        <div><div class="test-author">María G.</div><div class="test-since">Paciente desde 2010</div><div class="test-stars">★★★★★</div></div>
+      </div>
+    </div>
+    <div class="test-card">
+      <span class="test-quote">"</span>
+      <p class="test-text">Me hicieron toda la rehabilitación dental y quedé muy conforme. Profesionales, atentos y siempre dispuestos a explicar cada paso del proceso.</p>
+      <div class="test-footer">
+        <div class="test-avatar">RM</div>
+        <div><div class="test-author">Roberto M.</div><div class="test-since">Paciente desde 2015</div><div class="test-stars">★★★★★</div></div>
+      </div>
+    </div>
+    <div class="test-card">
+      <span class="test-quote">"</span>
+      <p class="test-text">La ortodoncia de mis hijos quedó perfecta. El trato fue excelente durante todo el proceso. Muy recomendable para familias del barrio.</p>
+      <div class="test-footer">
+        <div class="test-avatar">CP</div>
+        <div><div class="test-author">Claudia P.</div><div class="test-since">Paciente desde 2018</div><div class="test-stars">★★★★★</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="contacto" class="section-wrap contact-section">
+<div class="section-inner">
+  <p class="section-tag">Reservá tu turno</p>
+  <h2 class="section-title">Estamos para <em>atenderte</em></h2>
+  <div class="contact-grid">
+    <div>
+      <div class="contact-details">
+        <div class="c-detail">
+          <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+          <div><p class="c-label">Dirección</p><p class="c-val">Av. Luis de Tejeda 4009<br>Cerro de las Rosas, Córdoba</p></div>
+        </div>
+        <div class="c-detail">
+          <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
+          <div><p class="c-label">Teléfono</p><p class="c-val"><a href="tel:+543517434632">(351) 743-4632</a></p></div>
+        </div>
+        <div class="c-detail">
+          <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+          <div><p class="c-label">Email</p><p class="c-val"><a href="mailto:consultorios.od.hernandez@gmail.com">consultorios.od.hernandez@gmail.com</a></p></div>
+        </div>
+      </div>
+      <div class="hours-table">
+        <p class="hours-title">Horarios de atención</p>
+        <div class="hours-row"><span>Lunes, Mar, Mié y Vie</span><span>9:00–13:00 / 16:00–20:00</span></div>
+        <div class="hours-row"><span>Jueves</span><span>16:00–20:00</span></div>
+        <div class="hours-row"><span>Sábados y Domingos</span><span>Cerrado</span></div>
+      </div>
+    </div>
+    <div class="contact-form-wrap">
+      <p class="form-title">Solicitar turno</p>
+      <div class="f-row">
+        <div class="f-group"><label class="f-label">Nombre</label><input type="text" placeholder="Tu nombre"></div>
+        <div class="f-group"><label class="f-label">Apellido</label><input type="text" placeholder="Tu apellido"></div>
+      </div>
+      <div class="f-row">
+        <div class="f-group"><label class="f-label">Teléfono</label><input type="tel" placeholder="Tu teléfono"></div>
+        <div class="f-group"><label class="f-label">Email</label><input type="email" placeholder="Tu email"></div>
+      </div>
+      <div class="f-group"><label class="f-label">Servicio</label>
+        <select>
+          <option>Seleccioná un servicio</option>
+          <option>Odontología General</option>
+          <option>Cirugía</option>
+          <option>Rehabilitación</option>
+          <option>Ortodoncia</option>
+          <option>Odontopediatría</option>
+        </select>
+      </div>
+      <div class="f-group"><label class="f-label">Mensaje (opcional)</label><textarea placeholder="Contanos brevemente qué necesitás..."></textarea></div>
+      <button class="f-submit" onclick="alert('¡Gracias! Nos pondremos en contacto a la brevedad.')">Enviar solicitud →</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-logo">Consultorios Odontológicos Hernández</p>
+    <p class="footer-sub">Odontología Integral · Cerro de las Rosas, Córdoba · Desde Abril 1964</p>
+    <ul class="footer-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
